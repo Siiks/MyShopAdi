@@ -5,12 +5,7 @@
             <p class="lead">Ejemplo de componete stateful.</p>
             <div class="card-deck d-flex flex-row">
                 <div class="card" *ngFor="let plato of shopModel.shopItems">
-                    <img class="card-img-top" src="{{plato.picture}}" alt="{{plato.title}}">
-                    <div class="card-body">
-                        <h5 class="card-title">{{plato.title}}</h5>
-                        <p class="card-text">{{plato.desc}}</p>
-                        <a href="#" (click)="clickItem(plato)" class="btn btn-primary">Comprar</a>
-                    </div>
+                    <app-stateless [plato]="plato"></app-stateless>
                 </div>
             </div>
         </div>

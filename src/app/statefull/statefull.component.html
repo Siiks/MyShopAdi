@@ -1,0 +1,24 @@
+<main role="main" class="container">
+    <div class="starter-template row">
+        <div class="col-8">
+            <h1>Stateful</h1>
+            <p class="lead">Ejemplo de componete stateful.</p>
+            <div class="card-deck d-flex flex-row">
+                <div class="card" *ngFor="let plato of shopModel.shopItems">
+                    <img class="card-img-top" src="{{plato.picture}}" alt="{{plato.title}}">
+                    <div class="card-body">
+                        <h5 class="card-title">{{plato.title}}</h5>
+                        <p class="card-text">{{plato.desc}}</p>
+                        <a href="#" (click)="clickItem(plato)" class="btn btn-primary">Comprar</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-4">
+            <h1>Plato comprados</h1>
+            <ul class="list-group">
+                <li *ngFor="let boughtItem of boughtitems" class="list-groupitem">{{boughtItem.title}}</li>
+            </ul>
+        </div>
+    </div>
+</main>

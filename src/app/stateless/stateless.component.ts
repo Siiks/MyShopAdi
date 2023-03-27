@@ -22,18 +22,18 @@ export class StatelessComponent implements OnInit  {
   ngOnInit(): void {
     this.compra = 'Comprar'
   }
-  
+
   bought(elemen: HTMLElement){
     this.disable = true;
-    elemen.setAttribute("disabled", ""); 
-    elemen.setAttribute("class", "btn btn-danger")
+    elemen.setAttribute("disabled", "");
+    elemen.setAttribute("class", "btn btn-danger disabled")
     this.compra = 'Comprado !! ';
   }
   clickItem(plato: Plato, elemen: HTMLElement) {
     this.boughtitems.push(plato)
     !this.boughtitems.includes(plato) ? this.boughtitems.push(plato) : this.bought(elemen);
-    this.state.boughtitems.push(plato);
-    
+    this.state.boughtItems.push(plato);
+
   }
 
   boughtItemsFunc(){

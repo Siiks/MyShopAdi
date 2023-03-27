@@ -11,20 +11,29 @@ import { StatelessComponent } from '../stateless/stateless.component';
 })
 export class StatefullComponent implements OnInit {
   shopModel: ShopModel = new ShopModel();
-  boughtitems: Array<Plato> = [];
-  
-  
+  boughtItems: Array<Plato> = [];
+
+
   constructor(){
-    this.boughtitems = [];
-   
+    this.boughtItems = [];
+
   }
-  
+
   ngOnInit(): void {
 
   }
 
   clickItem(plato: Plato) {
-    this.boughtitems.push(plato);
+    this.boughtItems.push(plato);
   }
 
+  totalPrice() {
+    if (this.boughtItems) {
+      return this.boughtItems.reduce((prev: number, item: Plato) => {
+        return prev + item.price;
+      }, 0);
+    } else {
+      return 0;
+    }
+  }
 }

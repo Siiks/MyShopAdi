@@ -1,6 +1,7 @@
 <img class="card-img-top" src="{{plato.picture}}" alt="{{plato.title}}">
-<div class="card-body">
+<div class="card-body m-25">
     <h5 class="card-title">{{plato.title}}</h5>
     <p class="card-text">{{plato.desc}}</p>
+    <p class="card-text">{{plato.price}}&euro;</p>
     <a href="#" class="btn btn-primary" (click)="clickItem(plato, elem)" #elem>{{compra}}</a>
 </div>

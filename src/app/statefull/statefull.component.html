@@ -1,8 +1,7 @@
 <main role="main" class="container">
     <div class="starter-template row">
         <div class="col-8">
-            <h1>Stateful</h1>
-            <p class="lead">Ejemplo de componete stateful.</p>
+            <h1>Platos tipicos Rumanos</h1>
             <div class="card-deck d-flex flex-row">
                 <div class="card" *ngFor="let plato of shopModel.shopItems">
                     <app-stateless [plato]="plato"></app-stateless>
@@ -12,8 +11,10 @@
         <div class="col-4">
             <h1>Plato comprados</h1>
             <ul class="list-group">
-                <li *ngFor="let boughtItem of boughtitems" class="list-groupitem">{{boughtItem.title}}</li>
+                <li *ngFor="let boughtItem of boughtItems" class="list-groupitem">{{boughtItem.title}}</li>
             </ul>
+            <h2>Total: {{totalPrice() | currency:"&euro;"}}</h2>
+            <app-confirm *ngIf="totalPrice()"></app-confirm>
         </div>
     </div>
 </main>
